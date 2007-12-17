@@ -25,7 +25,6 @@ URL:		http://www-hft.ee.tu-berlin.de/~strauman/tp4utils
 Source:		%{name}_1_2%{?pre_ver:_%pre_pre}.tar.bz2
 Source1:	%{name}.xinitd
 Source2:	xtp4.sh
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 BuildRequires:	libapm-devel libxpm-devel libXaw3d-devel ImageMagick
 
 %description
