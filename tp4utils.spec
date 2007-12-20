@@ -25,7 +25,7 @@ URL:		http://www-hft.ee.tu-berlin.de/~strauman/tp4utils
 Source:		%{name}_1_2%{?pre_ver:_%pre_pre}.tar.bz2
 Source1:	%{name}.xinitd
 Source2:	xtp4.sh
-BuildRequires:	libapm-devel libxpm-devel libXaw3d-devel ImageMagick
+BuildRequires:	libapm-devel libxpm-devel Xaw3d-devel ImageMagick
 
 %description
 This package provides scroll-wheel emulation for IBM Trackpoints.
