@@ -54,10 +54,14 @@ convert -resize 16x16 tp4icon.xpm %{buildroot}/%{_miconsdir}/%{name}.png
 convert -resize 32x32 tp4icon.xpm %{buildroot}/%{_iconsdir}/%{name}.png
 convert -resize 48x48 tp4icon.xpm %{buildroot}/%{_liconsdir}/%{name}.png
 
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="xtp4" icon="%{name}.png" \
-needs="x11" section="Configuration/Hardware" title="Trackpoint Settings" \
-longtitle="Trackpoint settings"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=xtp4
+Icon=%{name}
+Categories=Settings;HardwareSettings;
+Name=Trackpoint Settings
+Comment=Trackpoint settings
 EOF
 
 mkdir -p %{buildroot}/%{_sysconfdir}/X11/xinit.d/
@@ -95,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/X11R6/lib/X11/app-defaults/XTp4
 %config(noreplace) %{_sysconfdir}/X11/xinit.d/%{name}
 #%{_sysconfdir}/sysconfig/%{name}
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
