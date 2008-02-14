@@ -20,6 +20,7 @@ Release: %{rel}
 %endif
 License:	GPL
 Group:		System/Servers
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Summary:	IBM Thinkpad Trackpoint daemon and utilities
 URL:		http://www-hft.ee.tu-berlin.de/~strauman/tp4utils
 Source:		%{name}_1_2%{?pre_ver:_%pre_pre}.tar.bz2
