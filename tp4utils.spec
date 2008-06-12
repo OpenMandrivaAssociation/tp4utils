@@ -82,13 +82,17 @@ if ! `grep -q "/dev/misc/psaux" $consoleperms` ; then
 EOF
 fi
 
+%if %mdkversion < 200900
 %update_menus
+%endif
 
 %postun
 consoleperms=/etc/security/console.perms
 [ $1 -eq 0 ] && perl -pi -e 's/.*psaux.*$//g' $consoleperms
 
+%if %mdkversion < 200900
 %clean_menus
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
